@@ -5,7 +5,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="public/postman.png" alt="Logo" width="80" height="80">
+    <img src="magicien.png" alt="Logo" width="80" height="80">
 
   <h3 align="center">Monster Slayer</h3>
 
