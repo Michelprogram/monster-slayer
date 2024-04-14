@@ -9,12 +9,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.30/vue.global.min.js"></script>
     <script src="app.js" defer></script>
   </head>
   <body>
     <header>
-      <h1>Monster Slayer - 21 - </h1>
+      <h1>Monster Slayer - 21 -</h1>
     </header>
     <div id="game">
       <section id="monster" class="container">
@@ -31,7 +31,9 @@
       </section>
       <section id="controls" v-if="!winner">
         <button @click="attackPlayer">ATTACK</button>
-        <button @click="superAttack" :disabled="mayUseSpecialAttack">SPECIAL ATTACK</button>
+        <button @click="superAttack" :disabled="mayUseSpecialAttack">
+          SPECIAL ATTACK
+        </button>
         <button @click="heal">HEAL</button>
         <button @click="surrender">SURRENDER</button>
       </section>
@@ -42,18 +44,24 @@
         <h3 v-else>It's a Draw</h3>
         <button @click="newGame">Start new Game</button>
       </section>
-<!--  <section v-else>
+      <!--  <section v-else>
    v-if="!endedBattle"
         <h2>Result</h2>
         <p>{{winner()}}</p>
-      </section> -->     
+      </section> -->
       <section id="log" class="container">
         <h2>Battle Log</h2>
         <ul>
           <li v-for="log in logs" :key="log">
             <span :class="logSpan(log)">{{log.actionBy}}</span>
-            <span v-if="log.actionType == 'Heal'"> heals himself for <span class="log--heal">{{log.actionValue}}</span></span>
-            <span v-else> attacks and deals <span class="log--damage">{{log.actionValue}}</span></span>
+            <span v-if="log.actionType == 'Heal'">
+              heals himself for
+              <span class="log--heal">{{log.actionValue}}</span></span
+            >
+            <span v-else>
+              attacks and deals
+              <span class="log--damage">{{log.actionValue}}</span></span
+            >
           </li>
         </ul>
       </section>
